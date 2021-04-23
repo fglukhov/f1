@@ -60,10 +60,23 @@
       </div>
     </header>
     <main>
+      <div class="preloader"></div>
       <!-- Top block-->
       <div class="section section-top">
+        <div class="section-top-video">
+          <video muted autoplay playsinline>
+            <source type="video/mp4" src="video/f1-video.mp4">
+            <source type="video/webm" src="video/f1-video.webm">
+          </video>
+        </div>
         <div class="container">
-          <div class="section-content"></div>
+          <div class="section-content">
+            <div class="section-top-text">
+              <div>New Team</div>
+              <div>New Building</div>
+              <div>New Life</div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Top block END-->
@@ -194,7 +207,7 @@
               <div class="col location-col-2">
                 <div class="contacts-map-wrapper">
                   <div class="contacts-map-link" data-toggle="modal" data-target="#mapModal">
-                    <div class="contacts-map" id="contactsMap"></div>
+                    <div class="contacts-map"><iframe src="https://www.google.com/maps/d/embed?mid=1RRvS63R-qM2ROZIwLZ3Kpk3cEaDG6rOy&hl=ru" width="640" height="480"></iframe></div>
                   </div>
                 </div>
               </div>
@@ -320,32 +333,25 @@
           <div class="section-content">
             <div class="plan-pic-wrapper">
               <div class="plan-pic-content">
+                <div class="plan-pic-ttl">Выберите этаж</div>
                 <div class="plan-pic-img"><img src="images/plan-pic.jpg" width="883"></div>
                 <div class="plan-floors">
-                  <div class="plan-floor plan-floor-1"></div>
-                  <div class="plan-floor plan-floor-2"></div>
-                  <div class="plan-floor plan-floor-3"></div>
+                  <div class="plan-floor plan-floor-0"></div>
                   <div class="plan-floor plan-floor-4"></div>
                   <div class="plan-floor plan-floor-5"></div>
                   <div class="plan-floor plan-floor-6"></div>
                   <div class="plan-floor plan-floor-7"></div>
-                  <div class="plan-floor plan-floor-8"></div>
-                  <div class="plan-floor plan-floor-9"></div>
                 </div>
                 <div class="floor-selection"></div>
               </div>
             </div>
             <div class="plan-menu-wrapper">
               <ul class="plan-menu">
-                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-1"><img class="svg-inline" src="images/f.svg"><span>1</span></a></li>
-                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-2"><img class="svg-inline" src="images/f.svg"><span>2</span></a></li>
-                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-3"><img class="svg-inline" src="images/f.svg"><span>3</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-1"><img class="svg-inline" src="images/f.svg"><span>0</span></a></li>
                 <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-4"><img class="svg-inline" src="images/f.svg"><span>4</span></a></li>
                 <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-5"><img class="svg-inline" src="images/f.svg"><span>5</span></a></li>
                 <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-6"><img class="svg-inline" src="images/f.svg"><span>6</span></a></li>
                 <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-7"><img class="svg-inline" src="images/f.svg"><span>7</span></a></li>
-                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-8"><img class="svg-inline" src="images/f.svg"><span>8</span></a></li>
-                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-9"><img class="svg-inline" src="images/f.svg"><span>9</span></a></li>
               </ul>
             </div>
           </div>
@@ -638,8 +644,16 @@
                       <div class="rooms-list"></div>
                       <div class="fields-wrapper">
                         <div class="form-group">
-                          <label class="placeholder" for="room_phone">Телефон</label>
+                          <label class="placeholder" for="room_name">Name</label>
+                          <input type="text" name="room_name" id="room_name" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_phone">Phone</label>
                           <input class="input-phone" type="text" name="room_phone" id="room_phone" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_email">E-mail</label>
+                          <input type="email" name="room_email" id="room_email" required>
                         </div>
                         <div class="form-footer">
                           <input class="btn btn-3" type="submit" value="Оставить заявку">
@@ -753,7 +767,9 @@
     <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
     <script src="js/jquery.mousewheel.js"></script>
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script><script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/lang-en.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
   </div>
