@@ -41,6 +41,23 @@ $(window).on("load", function() {
 
 	makeUp();
 
+	$(".preloader").fadeOut(500, function () {
+
+		$(".section-top-video video").get(0).play();
+
+		$(".section-top-text div").each(function (index, element) {
+
+			TweenMax.to($(element), .7, {
+				y: 0,
+				opacity: 1,
+				ease: Sine.easeOut,
+				delay: 8 + $(element).prevAll().length * .25
+			});
+
+		});
+
+	});
+
 });
 var baseUrl = "";
 
@@ -106,7 +123,7 @@ $(document).ready(function() {
 
 	$("body").on("click", "[data-room-url]", function () {
 
-		if (!$(".room-form").hasClass("processing")) {
+		if (!$(".room-form").hasClass("processing") && $(this).attr("data-room-disabled") != "true") {
 
 			var curBtn = $(this);
 
@@ -456,12 +473,6 @@ $(document).ready(function() {
 
 	// Forward button END
 
-	// Poll
-
-	quiz();
-
-	// Poll END
-
 	// FAQ
 
 	$("body").on("click", ".faq-item-ttl", function () {
@@ -691,7 +702,7 @@ $(document).ready(function() {
 
 	if ($("#contactsMap").length && $("#modalMap").length) {
 
-		var image = 'images/map-pin.svg',
+		var image = '/layout/images/map-pin.svg',
 			pinLat = 47.50194705385145,
 			pinLng = 19.134747306153063;
 
@@ -854,7 +865,7 @@ $(document).ready(function() {
 		if ($(this).data("label")) {
 			var inputLabel = $(this).data("label");
 		} else {
-			var inputLabel = "Прикрепить файл";
+			var inputLabel = textVars.attachFile;
 		}
 
 		$(this).fileinput({
@@ -886,12 +897,12 @@ $(document).ready(function() {
 	$("select").not(".picker__select--month, .picker__select--year, .rates-nav-select").each(function () {
 		if ($(this).attr("multiple")) {
 			$(this).selectpicker({
-				selectAllText: "Выбрать всё",
-				deselectAllText: "Снять выбор",
+				selectAllText: textVars.selectAll,
+				deselectAllText: textVars.deselectAll,
 				noneSelectedText: "",
 				selectedTextFormat: "count",
 				countSelectedText: function(count) {
-					return count + " " + declOfNum(count, ['элемент', 'элемента', 'элементов']);
+					return count + " " + declOfNum(count, textVars.elementsDecl);
 				}
 			});
 		} else {
@@ -903,8 +914,8 @@ $(document).ready(function() {
 		if (!$(this).prev(".dropdown-menu").find(".dropdown-footer").length) {
 			dropdownFooter = '\
       <div class="dropdown-footer">\
-      <div class="btn btn-1 btn-ico btn-save">Выбрать</div>\
-      <div class="btn btn-cancel">Очистить</div>\
+      <div class="btn btn-1 btn-ico btn-save">' + textVars.btnSelect + '</div>\
+      <div class="btn btn-cancel">' + textVars.btnReset + '</div>\
       </div>\
       ';
 			$(this).prev(".dropdown-menu").find("ul").append(dropdownFooter);
@@ -1080,9 +1091,13 @@ function validateForms() {
 				}
 			},
 			submitHandler: function(form) {
+				var formData = new FormData(form);
 				$.ajax({
 					type: "POST",
-					data: $(form).serialize(),
+					url: $(form).attr('action'),
+					data: formData,
+					processData: false,
+					contentType: false,
 					success: function () {
 						formSuccess(form);
 					}
@@ -1098,16 +1113,16 @@ function validateForms() {
 	});
 }
 jQuery.extend(jQuery.validator.messages, {
-	required: "Не заполнено поле",
+	required: textVars.formRequired,
 	remote: "Please fix this field.",
-	email: "Введите правильный e-mail.",
+	email: textVars.formEmail,
 	url: "Please enter a valid URL.",
 	date: "Please enter a valid date.",
 	dateISO: "Please enter a valid date (ISO).",
 	number: "Please enter a valid number.",
 	digits: "Please enter only digits.",
 	creditcard: "Please enter a valid credit card number.",
-	equalTo: "Пароли не совпадают.",
+	equalTo: textVars.formPassword,
 	accept: "Please enter a value with a valid extension.",
 	maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
 	minlength: jQuery.validator.format("Please enter at least {0} characters."),
@@ -1330,266 +1345,6 @@ function anchorsMenu() {
 				scrollTop: $("a[name='" + curLink.attr("href").replace("#","") + "']").offset().top - headerHeight - 50
 
 			},1000);
-
-		}
-
-	});
-
-}
-
-function quiz() {
-
-	// $(".poll-step-slider").slick({
-	// 	fade: true,
-	// 	swipe: false,
-	// 	arrows: false,
-	// 	rows: 0
-	// });
-
-	// $(".poll-form-step input[type=radio]").change(function () {
-	//
-	// 	if ($(this).is(":checked")) {
-	//
-	// 		$(this).closest(".poll-form-step").find(".poll-step-slider").slick("slickGoTo", $(this).closest(".form-radio").prevAll().length)
-	//
-	// 	}
-	//
-	// });
-
-	$(".poll-form [type=submit]").attr("disabled", true);
-
-	$(".form-checkboxes-required input[type=checkbox]").each(function () {
-
-		if (!$(this).closest(".form-checkboxes-required").find(":checked").length) {
-
-			$(this).closest(".form-checkboxes-required").addClass("error");
-
-		} else {
-
-			$(this).closest(".form-checkboxes-required").removeClass("error");
-
-		}
-
-	});
-
-	$(".form-checkboxes-required input[type=checkbox]").change(function () {
-
-		if (!$(this).closest(".form-checkboxes-required").find(":checked").length) {
-
-			$(this).closest(".form-checkboxes-required").addClass("error");
-
-		} else {
-
-			$(this).closest(".form-checkboxes-required").removeClass("error");
-
-		}
-
-	});
-
-	setActiveSteps();
-
-	var pollFormSteps = $(".poll-form-step");
-
-	var btnBack = $(".poll-form-nav .btn-back");
-	var btnFwd = $(".poll-form-nav .btn-forward");
-	var btnSubmit = $(".poll-form [type=submit]");
-
-	pollFormSteps.hide();
-
-	pollFormSteps.first().addClass("current").show();
-
-	btnFwd.click(function () {
-
-		if ($(".poll-form-step.current").find("input").length) {
-			$(".poll-form-step.current").find("input").valid();
-		}
-
-		if ($(".poll-form-step.current").find("textarea").length) {
-			$(".poll-form-step.current").find("textarea").valid();
-		}
-
-
-		if ($(".poll-form-step.current").nextAll(".active").length == 1) {
-
-			// btnFwd.hide();
-			// btnSubmit.show();
-
-		}
-
-		if ($(".poll-form-step.current").nextAll(".active").length && !$(".poll-form-step.current .error").length) {
-
-			var curStep = $(".poll-form-step.current");
-
-			curStep.removeClass("current").hide();
-
-			curStep.nextAll(".active").first().fadeIn(500).addClass("current");
-
-			if ($(".poll-form-step.current [type=submit]").length) {
-
-				$(".poll-form-step.current [type=submit]").attr("disabled", false);
-
-			}
-
-			$(".poll-wrapper .btn-back").attr("disabled",false);
-
-			quizDots();
-
-		}
-
-
-	});
-
-	btnBack.click(function () {
-
-		if ($(".poll-form-step.current").prevAll(".active").length) {
-
-			if ($(".poll-form-step.current").prevAll(".active").length == 1) {
-
-				$(".poll-wrapper .btn-back").attr("disabled",true);
-
-			}
-
-			var curStep = $(".poll-form-step.current");
-
-			curStep.removeClass("current").hide();
-
-			curStep.prevAll(".active").first().fadeIn(500).addClass("current");
-
-			// btnFwd.show();
-			// btnSubmit.hide();
-
-			quizDots();
-
-		}
-
-	});
-
-	$(".form-group-other input").focus(function () {
-
-		if (!$(this).closest(".form-radio-text").find(".form-radio input").is(":checked")) {
-
-			$(this).closest(".form-radio-text").find(".form-radio input").click().change();
-
-		}
-
-
-	});
-
-	$(".poll-form input[type=checkbox], .poll-form input[type=radio]").change(function () {
-
-		setActiveSteps();
-
-		// if ($(this).closest(".form-radio").next(".form-group-other").length) {
-		//
-		// 	if ($(this).is(":checked")) {
-		// 		$(this).closest(".form-radio").next(".form-group-other").fadeIn(250);
-		// 	} else {
-		// 		$(this).closest(".form-radio").next(".form-group-other").fadeOut(250);
-		// 	}
-		//
-		// }
-
-	});
-
-	$("#pollForm").submit(function() {
-		if ($(this).valid()) {
-			var form = $(this);
-
-			var quizResult = '';
-
-			$(".poll-form-step.active").not(".last").find(".poll-question").each(function () {
-
-				var stepTitle = "<h4>" + $(this).find(".h3").html() + "</h4>";
-
-				var stepValue = '';
-
-				$(this).find("input[type=checkbox], input[type=radio]").each(function () {
-
-					if ($(this).is(":checked")) {
-
-						stepValue += '<div>' + $(this).next("label").html() + '</div>';
-
-						if ($(this).closest(".form-radio-text").length) {
-							stepValue += '<div>' + $(this).closest(".form-radio-text").find("input[type=text]").val() + '</div>';
-						}
-
-					}
-
-				});
-
-				if (!$(this).find("input[type=checkbox], input[type=radio]").length) {
-
-					if ($(this).find("input[type=text]").length) {
-
-						stepValue += '<div>' + $(this).find("input[type=text]").val() + '</div>';
-
-					}
-
-					if ($(this).find("textarea").length) {
-
-						stepValue += '<div>' + $(this).find("textarea").val() + '</div>';
-
-					}
-
-				}
-
-				quizResult += stepTitle + stepValue;
-
-			});
-
-			console.log(quizResult);
-
-			var dataForm = $(this).serializeArray(); // convert form to array
-			dataForm.push({name: 'subject', value: "Цифровой акселератор - результат квиза"});
-			dataForm.push({name: 'email', value: $("#poll_email").val()});
-			dataForm.push({name: 'name', value: $("#poll_company_name").val()});
-			dataForm.push({name: 'company', value: $("#poll_company").val()});
-			dataForm.push({name: 'phone', value: $("#poll_phone").val()});
-			dataForm.push({name: 'quizresult', value: quizResult});
-
-			$.ajax({
-				type: "POST",
-				url: baseUrl + "quiz.php",
-				data: $.param(dataForm)
-			}).done(function() {
-
-				formSuccess(form);
-
-			});
-			return false;
-		}
-	});
-
-}
-
-function quizDots() {
-
-	var curIndex = $(".poll-form-step.current").prevAll(".active").length;
-
-	$("ul.poll-dots li").removeClass("active");
-
-	$("ul.poll-dots li").filter(function () {
-
-		return $(this).prevAll().length == curIndex;
-
-	}).addClass("active");
-
-}
-
-function setActiveSteps() {
-
-	$(".poll-form-step").each(function () {
-
-
-		var quizStep = $(this);
-
-		if (!quizStep.data("parent") || $("#" + quizStep.data("parent")).is(":checked")) {
-
-			quizStep.addClass("active");
-
-		} else {
-
-			quizStep.removeClass("active");
 
 		}
 

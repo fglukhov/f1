@@ -881,9 +881,107 @@ $(document).ready(function() {
 
 	});
 	// Numeric input
-	$(document).on("input", ".numeric", function() {
+
+	$(document).on("input", ".input-phone", function() {
 		this.value = this.value.replace(/\D/g, '');
 	});
+
+	$(document).on("input", ".numeric", function() {
+
+		this.value = this.value.replace(/\D/g, '');
+
+		var thisVal = $(this).val();
+
+		if ($(this).hasClass("numeric-format")) {
+
+			$(this).val(numFormat.to(parseInt(thisVal)));
+
+			if (numFormat.to(parseInt(thisVal)) == false) {
+
+				$(this).val("0")
+
+			}
+
+		}
+
+		if ($(this).val().replace(/\s/g,'') * 1 > $(this).attr("data-max") * 1) {
+
+			if ($(this).hasClass("numeric-format")) {
+
+				$(this).val(numFormat.to($(this).attr("data-max") * 1))
+
+			} else {
+
+				$(this).val($(this).attr("data-max"))
+
+			}
+
+		}
+
+		console.log($(this).val().replace(/\s/g,'') * 1 < $(this).attr("data-min") * 1)
+
+		if ($(this).val().replace(/\s/g,'') * 1 < $(this).attr("data-min") * 1) {
+
+			console.log($(this).attr("data-min"))
+
+			if ($(this).hasClass("numeric-format")) {
+
+				$(this).val(numFormat.to($(this).attr("data-min") * 1))
+
+			} else {
+
+				$(this).val($(this).attr("data-min"))
+
+			}
+
+		}
+
+
+	});
+
+	// Count
+
+	$("body").on("click", ".count-plus", function () {
+
+		var countInput = $(this).closest(".count").find(".count-input");
+
+		if (countInput.attr("data-step")) {
+
+			countStep = countInput.attr("data-step") * 1;
+
+		} else {
+
+			countStep = 1;
+
+		}
+
+		countInput.val(numFormat.to(countInput.val().replace(/\s/g,'') * 1 + countStep));
+
+
+	});
+
+	$("body").on("click", ".count-minus", function () {
+
+		var countInput = $(this).closest(".count").find(".count-input");
+
+		if (countInput.attr("data-step")) {
+
+			countStep = countInput.attr("data-step") * 1;
+
+		} else {
+
+			countStep = 1;
+
+		}
+
+		if (countInput.val().replace(/\s/g,'') * 1 * 1 > 1) {
+			countInput.val(numFormat.to(countInput.val().replace(/\s/g,'') * 1 - countStep));
+		}
+
+	});
+
+	// Count END
+
 	// Fancybox
 
 	// Forms
@@ -953,9 +1051,9 @@ $(document).ready(function() {
 	});
 
 
-	$('.input-numeric').bind('keyup paste', function(){
-		this.value = this.value.replace(/[^0-9]/g, '');
-	});
+	// $('.input-numeric').bind('keyup paste', function(){
+	// 	this.value = this.value.replace(/[^0-9]/g, '');
+	// });
 
 	if ($("input:text").length) {
 		$("input:text").each(function() {
@@ -1027,7 +1125,7 @@ $(document).ready(function() {
 
 function validateForms() {
 	$('.textarea-autogrow').autogrow();
-	$("input.input-phone").mask("+7 (999) 999-99-99");
+	//$("input.input-phone").mask("(999) 999-9999? x99999");
 	jQuery.validator.addClassRules('phone-email-group', {
 		require_from_group: [1, ".phone-email-group"]
 	});

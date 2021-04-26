@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>F1</title>
+  <!--link(rel='icon', href='favicon.ico')-->
+  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="js/bootstrap-fileinput/css/fileinput.min.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="over-wrapper">
+    <div id="mobile-indicator"></div>
+    <div id="sm-indicator"></div>
+    <div id="md-indicator"></div>
+    <header>
+      <div class="btn-login" data-toggle="modal" data-target="#loginModal"></div>
+      <div class="btn btn-1 btn-feedback" data-toggle="modal" data-target="#feedbackModal">Написать нам</div>
+      <div class="container">
+        <div class="header-content">
+          <div class="row">
+            <div class="col header-col-1">
+              <div class="header-logo"><img src="images/logo.svg" alt="F1"></div>
+            </div>
+            <div class="col header-col-group-r">
+              <div class="row">
+                <div class="col header-col-2">
+                  <div class="navbar-trigger"><span></span><span></span><span></span></div>
+                  <div class="navbar-wrapper">
+                    <ul class="navbar-nav">
+                      <li><a href="#about">General information</a></li>
+                      <li><a href="#location">Location</a></li>
+                      <li><a href="#objects">Objects</a></li>
+                      <li><a href="#services">Available services</a></li>
+                    </ul>
+                    <div class="lang-selector">
+                      <div class="lang-selector-item"><a class="active" href="#">En</a></div>
+                      <div class="lang-selector-item"><a href="#">Ve</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col header-col-3">
+                  <div class="lang-selector">
+                    <div class="lang-selector-item"><a class="active" href="#">En</a></div>
+                    <div class="lang-selector-item"><a href="#">Ve</a></div>
+                  </div>
+                </div>
+                <div class="col header-col-4">
+                  <div class="header-phone"><a href="tel:+36 30 111 7321">+36 30 111 7321</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="account-content">
+        <div class="container">
+          <h1>Мой кабинет</h1>
+          <div class="account-section">
+            <h2>Данные арендодателя</h2>
+            <div class="account-item">
+              <div class="account-item-name">
+                <p>Клиент:</p>
+              </div>
+              <div class="account-item-val">
+                <p>ООО “Длинное название компании”</p>
+              </div>
+            </div>
+            <div class="account-item">
+              <div class="account-item-name">
+                <p>Арендуемое помещение:</p>
+              </div>
+              <div class="account-item-val">
+                <p>№ 1, 2, 3</p>
+              </div>
+            </div>
+            <div class="account-item">
+              <div class="account-item-name">
+                <p>Договор:</p>
+              </div>
+              <div class="account-item-val">
+                <p>№ 123456 до 01.20.2022</p>
+              </div>
+            </div>
+            <div class="account-item">
+              <div class="account-item-name">
+                <p>Ваш личный менеджер:</p>
+              </div>
+              <div class="account-item-val">
+                <p>Birkas Adam</p>
+                <p>+ 36-30-111-73-21</p>
+                <p><a href="mailto:birkas@yandex.ru">birkas@yandex.ru</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="account-section">
+            <h2>Оплата</h2>
+            <div class="account-item">
+              <div class="account-item-name align-items-center">
+                <p>Ежемесячная оплата</p>
+              </div>
+              <div class="account-item-val"><a class="dl-link" href="#">
+                  <div class="dl-link-ico"></div>
+                  <div class="dl-link-content">
+                    <div class="dl-link-name">Скачать invoice</div>
+                    <div class="dl-link-date">Дата загрузки 22.04.2021</div>
+                  </div></a></div>
+            </div>
+            <div class="account-item">
+              <div class="account-item-name align-items-center">
+                <p>Коммунальные платежи</p>
+              </div>
+              <div class="account-item-val"><a class="dl-link" href="#">
+                  <div class="dl-link-ico"></div>
+                  <div class="dl-link-content">
+                    <div class="dl-link-name">Скачать invoice</div>
+                    <div class="dl-link-date">Дата загрузки 22.04.2021</div>
+                  </div></a></div>
+            </div>
+          </div>
+          <div class="account-section">
+            <h2>Дополнительные услуги</h2>
+            <div class="account-item">
+              <div class="account-item-name">
+                <p>Маленьки текст про выбор дополнительной услуги:</p>
+              </div>
+              <div class="account-item-val">
+                <form>
+                  <div class="form-group form-group-no-padding">
+                    <div class="form-checkboxes">
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_1" id="account_extra_1" checked>
+                        <label for="account_extra_1">Cleaning <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_2" id="account_extra_2">
+                        <label for="account_extra_2">Meeting rooms <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_3" id="account_extra_3">
+                        <label for="account_extra_3">Parking <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_4" id="account_extra_4" checked>
+                        <label for="account_extra_4">Fit out <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_5" id="account_extra_5">
+                        <label for="account_extra_5">Wi-Fi <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                      <div class="form-checkbox">
+                        <input type="checkbox" name="account_extra_6" id="account_extra_6">
+                        <label for="account_extra_6">Carwash <span class="checkbox-price">— 1 000 €/м&sup2;</span></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-footer">
+                    <input class="btn btn-2" type="submit" value="Сохранить">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="account-section">
+            <h2>Изменить условия аренды</h2>
+            <form>
+              <div class="account-item">
+                <div class="account-item-name account-item-name-alt">
+                  <p>Изменить свою площадь</p>
+                </div>
+                <div class="account-item-val">
+                  <div class="form-group form-group-no-padding">
+                    <div class="count-wrapper">
+                      <div class="count-field">
+                        <div class="count">
+                          <div class="count-minus"></div>
+                          <div class="count-input-wrapper">
+                            <input class="count-input numeric numeric-format" type="text" id="account_area" name="account_area" value="11 550" data-min="10" data-max="999999" data-step="10">
+                          </div>
+                          <div class="count-plus"></div>
+                        </div>
+                      </div>
+                      <div class="count-units">
+                        <p>м&sup2;</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="account-item">
+                <div class="account-item-name account-item-name-alt">
+                  <p>Вариант контракта</p>
+                </div>
+                <div class="account-item-val">
+                  <div class="form-group form-group-no-padding">
+                    <select name="account_contract" id="account_contract" data-none-selected-text="Выберите вариант продления контракта" required>
+                      <option value="" disabled selected></option>
+                      <option value="1">Вариант продления контракта</option>
+                      <option value="2">Вариант продления контракта</option>
+                      <option value="3">Вариант продления контракта</option>
+                      <option value="4">Вариант продления контракта</option>
+                    </select>
+                  </div>
+                  <div class="form-footer">
+                    <input class="btn btn-2" type="submit" value="Отправить">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="section section-problem">
+        <div class="container">
+          <div class="section-content">
+            <div class="row">
+              <div class="col problem-col-1">
+                <div class="problem-descr">
+                  <h2>Сообщить о&nbsp;проблеме</h2>
+                  <p>У вас есть вопросы, претензии или пожелания? Напишите нам! Ваше мнение важно для нас.</p>
+                </div>
+              </div>
+              <div class="col problem-col-2">
+                <div class="problem-form">
+                  <form>
+                    <div class="form-group">
+                      <label class="placeholder" for="problem_message">Текст сообщения</label>
+                      <textarea name="problem_message" id="problem_message" rows="4" required></textarea>
+                    </div>
+                    <div class="form-footer">
+                      <input class="btn btn-2" type="submit" value="Отправить">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <div class="footer-row">
+            <div class="footer-col footer-l">
+              <div class="footer-dev-wrapper"><a class="footer-dev" href="#"><span>Разработка сайта Paradigma</span></a></div>
+            </div>
+            <div class="footer-col footer-r">
+              <div class="footer-soclinks"><a class="footer-soclink footer-soclink-facebook" href="#">Facebook</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade floor-modal" id="floorModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="floor-wrapper">
+            <div class="row">
+              <div class="floor-col-1">
+                <ul class="floor-menu">
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>1</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>2</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>3</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>4</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>5</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>6</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>7</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>8</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>9</span></a></li>
+                </ul>
+              </div>
+              <div class="floor-col-2">
+                <div class="floor-plan-slider-wrapper">
+                  <div class="floor-plan-slider">
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/1-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/1-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/2-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/2-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/3-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/3-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/4-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/4-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/5-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/5-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/6-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/6-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/7-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/7-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/8-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/8-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/9-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/9-rooms.svg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="floor-col-3">
+                <div class="room-form">
+                  <div class="room-form-top">
+                    <div class="h2">Выбранные помещения</div>
+                  </div>
+                  <div class="room-form-bottom">
+                    <form>
+                      <div class="room-form-descr">
+                        <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону <a href="tel:+36 30 111 7321">+36 30 111 7321</a></p>
+                      </div>
+                      <div class="rooms-list"></div>
+                      <div class="fields-wrapper">
+                        <div class="form-group">
+                          <label class="placeholder" for="room_name">Name</label>
+                          <input type="text" name="room_name" id="room_name" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_phone">Phone</label>
+                          <input class="input-phone" type="text" name="room_phone" id="room_phone" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_email">E-mail</label>
+                          <input type="email" name="room_email" id="room_email" required>
+                        </div>
+                        <div class="form-footer">
+                          <input class="btn btn-3" type="submit" value="Оставить заявку">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade floor-modal room-modal" id="roomModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="ajax-modal-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade map-modal" id="mapModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="modal-map" id="modalMap"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade form-modal" id="feedbackModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="section section-feedback">
+            <div class="container">
+              <div class="section-content">
+                <div class="section-header">
+                  <h2>Ask us</h2>
+                </div>
+                <div class="feedback-form-wrapper">
+                  <div class="feedback-form-wrapper-inner">
+                    <div class="feedback-form">
+                      <form>
+                        <div class="row">
+                          <div class="col form-col-name">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_name">Ваше имя</label>
+                              <input type="text" name="feedback_modal_name" id="feedback_modal_name" required>
+                            </div>
+                          </div>
+                          <div class="col form-col-phone">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_phone">Телефон</label>
+                              <input class="input-phone" type="text" name="feedback_modal_phone" id="feedback_modal_phone" required>
+                            </div>
+                          </div>
+                          <div class="col col-12">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_message">Ваш вопрос</label>
+                              <textarea class="textarea-autogrow" name="feedback_modal_message" id="feedback_modal_message" rows="1"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-footer">
+                          <input class="btn btn-2" type="submit" value="Отправить">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade form-modal" id="loginModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="section section-feedback">
+            <div class="container">
+              <div class="section-content">
+                <div class="section-header">
+                  <h2>Войти</h2>
+                </div>
+                <div class="feedback-form-wrapper">
+                  <div class="feedback-form-wrapper-inner">
+                    <div class="feedback-form">
+                      <form>
+                        <div class="row">
+                          <div class="col form-col-1-2">
+                            <div class="form-group">
+                              <label class="placeholder" for="login_modal_name">Логин</label>
+                              <input type="text" name="login_modal_name" id="login_modal_name" required>
+                            </div>
+                          </div>
+                          <div class="col form-col-1-2">
+                            <div class="form-group">
+                              <label class="placeholder" for="login_modal_phone">Пароль</label>
+                              <input type="password" name="login_modal_phone" id="login_modal_phone" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-footer">
+                          <div class="row">
+                            <div class="col form-col-1-2">
+                              <input class="btn btn-2" type="submit" value="Отправить">
+                            </div>
+                            <div class="col form-col-1-2">
+                              <div class="forgot-link-wrapper"><a class="forgot-link" href="#">Забыли пароль?</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade side-modal form-modal" id="successModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="svg-inline" src="images/close.svg"></button>
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="h2"><span>Ваша заявка успешно принята!</span></div>
+          </div>
+          <div class="modal-body">
+            <div class="text">
+              <p>Перезвоним в течение 15 минут</p>
+            </div>
+            <div class="success-modal-button">
+              <button class="btn btn-1" type="button" data-dismiss="modal" aria-label="Close">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wNumb.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox.min.js"></script>
+    <script src="js/greensock/TweenMax.min.js"></script>
+    <script src="js/greensock/plugins/CSSRulePlugin.min.js"></script>
+    <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/lang-en.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+  </div>
+</body>

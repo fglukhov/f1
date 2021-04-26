@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>F1</title>
+  <!--link(rel='icon', href='favicon.ico')-->
+  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="js/bootstrap-fileinput/css/fileinput.min.css">
+  <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="over-wrapper">
+    <div id="mobile-indicator"></div>
+    <div id="sm-indicator"></div>
+    <div id="md-indicator"></div>
+    <header>
+      <div class="btn-login" data-toggle="modal" data-target="#loginModal"></div>
+      <div class="btn btn-1 btn-feedback" data-toggle="modal" data-target="#feedbackModal">Написать нам</div>
+      <div class="container">
+        <div class="header-content">
+          <div class="row">
+            <div class="col header-col-1">
+              <div class="header-logo"><img src="images/logo.svg" alt="F1"></div>
+            </div>
+            <div class="col header-col-group-r">
+              <div class="row">
+                <div class="col header-col-2">
+                  <div class="navbar-trigger"><span></span><span></span><span></span></div>
+                  <div class="navbar-wrapper">
+                    <ul class="navbar-nav">
+                      <li><a href="#about">General information</a></li>
+                      <li><a href="#location">Location</a></li>
+                      <li><a href="#objects">Objects</a></li>
+                      <li><a href="#services">Available services</a></li>
+                    </ul>
+                    <div class="lang-selector">
+                      <div class="lang-selector-item"><a class="active" href="#">En</a></div>
+                      <div class="lang-selector-item"><a href="#">Ve</a></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col header-col-3">
+                  <div class="lang-selector">
+                    <div class="lang-selector-item"><a class="active" href="#">En</a></div>
+                    <div class="lang-selector-item"><a href="#">Ve</a></div>
+                  </div>
+                </div>
+                <div class="col header-col-4">
+                  <div class="header-phone"><a href="tel:+36 30 111 7321">+36 30 111 7321</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="preloader"></div>
+      <!-- Top block-->
+      <div class="section section-top">
+        <div class="section-top-video">
+          <video muted autoplay playsinline>
+            <source type="video/mp4" src="video/f1-video.mp4">
+            <source type="video/webm" src="video/f1-video.webm">
+          </video>
+        </div>
+        <div class="container">
+          <div class="section-content">
+            <div class="section-top-text">
+              <div>New Team</div>
+              <div>New Building</div>
+              <div>New Life</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Top block END-->
+      <div class="section-group section-group-about sticky-wrapper">
+        <!-- About-->
+        <div class="section section-about"><a name="about"></a>
+          <div class="sticky-block custom-slider-wrapper about-slider-wrapper">
+            <div class="custom-slider about-slider">
+              <div class="slide" style="background-image: url(files/about-slide-1.jpg)"></div>
+              <div class="slide" style="background-image: url(files/about-slide-2.jpg)"></div>
+              <div class="slide" style="background-image: url(files/about-slide-3.jpg)"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="section-descr">
+              <div class="section-content">
+                <div class="about-content-block">
+                  <div class="section-header">
+                    <h2>About</h2>
+                  </div>
+                  <div class="text-wrapper">
+                    <p>Когда ваши ожидания оправдываются. Небольшой кусочек текста о бизнес-центре. Маленький но ёмкий.</p>
+                    <p>О его преимуществах, дизайне, инфраструктуре, местоположении либо истории. Когда ваши ожидания оправдываются. Небольшой кусочек текста о бизнес-центре. Маленький но ёмкий.</p>
+                    <p>Когда ваши ожидания оправдываются. Небольшой кусочек текста о бизнес-центре. Маленький но ёмкий.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- About END-->
+        <!-- Pros-->
+        <div class="section section-about section-pros">
+          <div class="container">
+            <div class="section-descr">
+              <div class="section-content">
+                <div class="about-content-block">
+                  <div class="pros-list">
+                    <div class="pros-tmb">
+                      <div class="pros-tmb-pic"><img src="images/pros-1.svg"></div>
+                      <div class="pros-tmb-descr">
+                        <div class="pros-num">80&nbsp;000</div>
+                        <div class="pros-ttl">people per&nbsp;day</div>
+                      </div>
+                    </div>
+                    <div class="pros-tmb">
+                      <div class="pros-tmb-pic"><img src="images/pros-2.svg"></div>
+                      <div class="pros-tmb-descr">
+                        <div class="pros-floors">
+                          <div class="pros-floors-tmb">
+                            <div class="pros-num">7</div>
+                            <div class="pros-ttl">floors</div>
+                          </div>
+                          <div class="pros-floors-tmb pros-floors-tmb-alt">
+                            <div class="pros-num">3</div>
+                            <div class="pros-ttl">коммерческих</div>
+                          </div>
+                          <div class="pros-floors-tmb pros-floors-tmb-alt">
+                            <div class="pros-num">4</div>
+                            <div class="pros-ttl">офисных</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pros-tmb">
+                      <div class="pros-tmb-pic"><img src="images/pros-3.svg"></div>
+                      <div class="pros-tmb-descr">
+                        <div class="pros-num">14&nbsp;050<span>m&sup2;</span></div>
+                        <div class="pros-ttl">total square</div>
+                        <div class="pros-areas">
+                          <div class="pros-areas-tmb">
+                            <div class="pros-num">3&nbsp;200<span>m&sup2;</span></div>
+                            <div class="pros-ttl">коммерческие</div>
+                          </div>
+                          <div class="pros-areas-tmb">
+                            <div class="pros-num">4&nbsp;500<span>m&sup2;</span></div>
+                            <div class="pros-ttl">офисные</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pros-tmb">
+                      <div class="pros-tmb-pic"><img src="images/pros-4.svg"></div>
+                      <div class="pros-tmb-descr">
+                        <div class="pros-num">1&nbsp;200<span>m&sup2;</span></div>
+                        <div class="pros-ttl">storages</div>
+                      </div>
+                    </div>
+                    <div class="pros-tmb">
+                      <div class="pros-tmb-pic"><img src="images/pros-5.svg"></div>
+                      <div class="pros-tmb-descr">
+                        <div class="pros-num">50</div>
+                        <div class="pros-ttl">parking spaces</div>
+                        <div class="pros-info">+ неограниченное количество у здания</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pros END-->
+      </div>
+      <!-- Location-->
+      <div class="section section-alt section-location"><a name="location"></a>
+        <div class="section-bg section-location-bg" style="background-image: url(images/section-location-bg.jpg);"></div>
+        <div class="container">
+          <div class="section-content">
+            <div class="row">
+              <div class="col location-col-1">
+                <div class="location-descr">
+                  <div class="location-descr-top">
+                    <div class="section-header">
+                      <div class="location-header">
+                        <h2>L<span class="location-deco">o</span>cation</h2>
+                        <div class="location-sub-ttl">Feher ut 1</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="location-descr-bottom">
+                    <div class="text-wrapper">
+                      <p>В самом сердце делового центра Будапешта  Геолокация - адрес, Feher ut 1, 80.000 человек в день проходимость</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col location-col-2">
+                <div class="contacts-map-wrapper">
+                  <div class="contacts-map-link" data-toggle="modal" data-target="#mapModal">
+                    <div class="contacts-map"><iframe src="https://www.google.com/maps/d/embed?mid=1RRvS63R-qM2ROZIwLZ3Kpk3cEaDG6rOy&hl=ru" width="640" height="480"></iframe></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Location END-->
+      <!-- Infra structure-->
+      <div class="section section-infra sticky-wrapper">
+        <div class="sticky-block custom-slider-wrapper infra-slider-wrapper">
+          <div class="custom-slider infra-slider">
+            <div class="slide" style="background-image: url(files/infra-slide-1.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-2.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-3.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-4.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-5.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-6.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-7.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-8.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-9.jpg)"></div>
+            <div class="slide" style="background-image: url(files/infra-slide-10.jpg)"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="section-descr">
+            <div class="section-content">
+              <div class="section-header">
+                <h2>Infra structure</h2>
+              </div>
+              <div class="text-wrapper">
+                <div class="infra-list">
+                  <div class="infra-item active" data-index="0">
+                    <div class="infra-item-ttl">
+                      <div><span class="nowrap">Банкоматы <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="1">
+                    <div class="infra-item-ttl">
+                      <div><span class="nowrap">Cafes <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="2">
+                    <div class="infra-item-ttl">
+                      <div><span class="nowrap">Grocery <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="3">
+                    <div class="infra-item-ttl">
+                      <div>Gym and <span class="nowrap">wellness <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="4">
+                    <div class="infra-item-ttl">
+                      <div>Fight <span class="nowrap">club <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="5">
+                    <div class="infra-item-ttl">
+                      <div><span class="nowrap">Kitchens <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="6">
+                    <div class="infra-item-ttl">
+                      <div>Vending <span class="nowrap">machines <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="7">
+                    <div class="infra-item-ttl">
+                      <div>Sky <span class="nowrap">bar <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="8">
+                    <div class="infra-item-ttl">
+                      <div>Anti aging <span class="nowrap">center <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                  <div class="infra-item" data-index="9">
+                    <div class="infra-item-ttl">
+                      <div>Magnet <span class="nowrap">cosmetics <span class="infra-item-arrow"></span></span></div>
+                    </div>
+                    <div class="infra-item-content">
+                      <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону +36 30 111 7321</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Infra structure END-->
+      <!-- Plan-->
+      <div class="section section-plan"><a name="objects"></a>
+        <div class="container">
+          <div class="section-content">
+            <div class="plan-pic-wrapper">
+              <div class="plan-pic-content">
+                <div class="plan-pic-ttl">Выберите этаж</div>
+                <div class="plan-pic-img"><img src="images/plan-pic.jpg" width="883"></div>
+                <div class="plan-floors">
+                  <div class="plan-floor plan-floor-0"></div>
+                  <div class="plan-floor plan-floor-4"></div>
+                  <div class="plan-floor plan-floor-5"></div>
+                  <div class="plan-floor plan-floor-6"></div>
+                  <div class="plan-floor plan-floor-7"></div>
+                </div>
+                <div class="floor-selection"></div>
+              </div>
+            </div>
+            <div class="plan-menu-wrapper">
+              <ul class="plan-menu">
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-1"><img class="svg-inline" src="images/f.svg"><span>0</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-4"><img class="svg-inline" src="images/f.svg"><span>4</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-5"><img class="svg-inline" src="images/f.svg"><span>5</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-6"><img class="svg-inline" src="images/f.svg"><span>6</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#floorModal" data-hash="floor-7"><img class="svg-inline" src="images/f.svg"><span>7</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Plan END-->
+      <!-- Services-->
+      <div class="section section-services"><a name="services"></a>
+        <div class="container">
+          <div class="section-content">
+            <div class="row">
+              <div class="col services-col-1">
+                <div class="section-descr">
+                  <div class="section-header">
+                    <h2>Services</h2>
+                  </div>
+                  <div class="text-wrapper">
+                    <p>Когда ваши ожидания оправдываются. Небольшой кусочек текста о бизнес-центре. Маленький но ёмкий.</p>
+                    <p>О его преимуществах, дизайне, инфраструктуре, местоположении либо истории.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col services-col-2">
+                <div class="services-block">
+                  <div class="services-block-header">
+                    <h3>Included</h3>
+                  </div>
+                  <div class="services-list">
+                    <div class="row">
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-1.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Security</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-2.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>CCTV</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-3.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Cleaning common areas</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-4.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Insurance</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-5.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Shared kitchens</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-6.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Technical support</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-block">
+                  <div class="services-block-header">
+                    <h3>Extras</h3>
+                  </div>
+                  <div class="services-list">
+                    <div class="row">
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-7.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Cleaning</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-8.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Meeting rooms</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-9.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Parking</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-10.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Fit out</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-11.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Wi-Fi</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-tmb">
+                          <div class="service-tmb-pic"><img src="images/service-12.svg"></div>
+                          <div class="service-tmb-descr">
+                            <p>Carwash</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Services END-->
+      <!-- Feedback-->
+      <div class="section section-feedback">
+        <div class="container">
+          <div class="section-content">
+            <div class="section-header">
+              <h2>Ask us</h2>
+            </div>
+            <div class="feedback-form-wrapper">
+              <div class="feedback-form-wrapper-inner">
+                <div class="feedback-form">
+                  <form>
+                    <div class="row">
+                      <div class="col form-col-name">
+                        <div class="form-group">
+                          <label class="placeholder" for="feedback_name">Ваше имя</label>
+                          <input type="text" name="feedback_name" id="feedback_name" required>
+                        </div>
+                      </div>
+                      <div class="col form-col-phone">
+                        <div class="form-group">
+                          <label class="placeholder" for="feedback_phone">Телефон</label>
+                          <input class="input-phone" type="text" name="feedback_phone" id="feedback_phone" required>
+                        </div>
+                      </div>
+                      <div class="col col-12">
+                        <div class="form-group">
+                          <label class="placeholder" for="feedback_message">Ваш вопрос</label>
+                          <textarea class="textarea-autogrow" name="feedback_message" id="feedback_message" rows="1"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-footer">
+                      <input class="btn btn-2" type="submit" value="Отправить">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Feedback END-->
+    </main>
+    <footer>
+      <div class="container-fluid">
+        <div class="footer-content">
+          <div class="footer-row">
+            <div class="footer-col footer-l">
+              <div class="footer-dev-wrapper"><a class="footer-dev" href="#"><span>Разработка сайта Paradigma</span></a></div>
+            </div>
+            <div class="footer-col footer-r">
+              <div class="footer-soclinks"><a class="footer-soclink footer-soclink-facebook" href="#">Facebook</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade floor-modal" id="floorModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="floor-wrapper">
+            <div class="row">
+              <div class="floor-col-1">
+                <ul class="floor-menu">
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>1</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>2</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>3</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>4</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>5</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>6</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>7</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>8</span></a></li>
+                  <li><a><img class="svg-inline" src="images/f.svg"><span>9</span></a></li>
+                </ul>
+              </div>
+              <div class="floor-col-2">
+                <div class="floor-plan-slider-wrapper">
+                  <div class="floor-plan-slider">
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/1-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/1-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/2-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/2-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/3-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/3-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/4-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/4-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/5-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/5-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/6-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/6-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/7-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/7-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/8-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/8-rooms.svg"></div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                      <div class="floor-plan">
+                        <div class="floor-plan-bg"><img src="files/plans/9-bg.svg"></div>
+                        <div class="floor-plan-rooms"><img class="svg-inline" src="files/plans/9-rooms.svg"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="floor-col-3">
+                <div class="room-form">
+                  <div class="room-form-top">
+                    <div class="h2">Выбранные помещения</div>
+                  </div>
+                  <div class="room-form-bottom">
+                    <form>
+                      <div class="room-form-descr">
+                        <p>Выберите помещения на плане и оставьте заявку или позвоните нам по телефону <a href="tel:+36 30 111 7321">+36 30 111 7321</a></p>
+                      </div>
+                      <div class="rooms-list"></div>
+                      <div class="fields-wrapper">
+                        <div class="form-group">
+                          <label class="placeholder" for="room_name">Name</label>
+                          <input type="text" name="room_name" id="room_name" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_phone">Phone</label>
+                          <input class="input-phone" type="text" name="room_phone" id="room_phone" required>
+                        </div>
+                        <div class="form-group">
+                          <label class="placeholder" for="room_email">E-mail</label>
+                          <input type="email" name="room_email" id="room_email" required>
+                        </div>
+                        <div class="form-footer">
+                          <input class="btn btn-3" type="submit" value="Оставить заявку">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade floor-modal room-modal" id="roomModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="ajax-modal-content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade map-modal" id="mapModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="modal-map" id="modalMap"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade form-modal" id="feedbackModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="section section-feedback">
+            <div class="container">
+              <div class="section-content">
+                <div class="section-header">
+                  <h2>Ask us</h2>
+                </div>
+                <div class="feedback-form-wrapper">
+                  <div class="feedback-form-wrapper-inner">
+                    <div class="feedback-form">
+                      <form>
+                        <div class="row">
+                          <div class="col form-col-name">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_name">Ваше имя</label>
+                              <input type="text" name="feedback_modal_name" id="feedback_modal_name" required>
+                            </div>
+                          </div>
+                          <div class="col form-col-phone">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_phone">Телефон</label>
+                              <input class="input-phone" type="text" name="feedback_modal_phone" id="feedback_modal_phone" required>
+                            </div>
+                          </div>
+                          <div class="col col-12">
+                            <div class="form-group">
+                              <label class="placeholder" for="feedback_modal_message">Ваш вопрос</label>
+                              <textarea class="textarea-autogrow" name="feedback_modal_message" id="feedback_modal_message" rows="1"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-footer">
+                          <input class="btn btn-2" type="submit" value="Отправить">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade form-modal" id="loginModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+          <div class="section section-feedback">
+            <div class="container">
+              <div class="section-content">
+                <div class="section-header">
+                  <h2>Войти</h2>
+                </div>
+                <div class="feedback-form-wrapper">
+                  <div class="feedback-form-wrapper-inner">
+                    <div class="feedback-form">
+                      <form>
+                        <div class="row">
+                          <div class="col form-col-1-2">
+                            <div class="form-group">
+                              <label class="placeholder" for="login_modal_name">Логин</label>
+                              <input type="text" name="login_modal_name" id="login_modal_name" required>
+                            </div>
+                          </div>
+                          <div class="col form-col-1-2">
+                            <div class="form-group">
+                              <label class="placeholder" for="login_modal_phone">Пароль</label>
+                              <input type="password" name="login_modal_phone" id="login_modal_phone" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-footer">
+                          <div class="row">
+                            <div class="col form-col-1-2">
+                              <input class="btn btn-2" type="submit" value="Отправить">
+                            </div>
+                            <div class="col form-col-1-2">
+                              <div class="forgot-link-wrapper"><a class="forgot-link" href="#">Забыли пароль?</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade side-modal form-modal" id="successModal" tabindex="-1">
+      <div class="modal-dialog">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="svg-inline" src="images/close.svg"></button>
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="h2"><span>Ваша заявка успешно принята!</span></div>
+          </div>
+          <div class="modal-body">
+            <div class="text">
+              <p>Перезвоним в течение 15 минут</p>
+            </div>
+            <div class="success-modal-button">
+              <button class="btn btn-1" type="button" data-dismiss="modal" aria-label="Close">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wNumb.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/fancybox/jquery.fancybox.min.js"></script>
+    <script src="js/greensock/TweenMax.min.js"></script>
+    <script src="js/greensock/plugins/CSSRulePlugin.min.js"></script>
+    <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/lang-en.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+  </div>
+</body>
